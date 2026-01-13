@@ -22,51 +22,79 @@ function Results() {
     try {
       console.log('Starting email send process...')
 
-      // Generate both PDFs as base64
-      console.log('Generating PDFs...')
-      const resultsPdfBase64 = await generateResultsPDFAsBase64(answers)
-      const adminPdfBase64 = await generateAdminPDFAsBase64(answers, questionsData)
-      console.log('PDFs generated successfully')
-
       const centerName = answers?.['q1_1'] || answers?.['q1_1_1'] || 'Молодіжний центр'
       const completedAt = new Date().toLocaleString('uk-UA')
 
-      // Send to API endpoint
-      console.log('Sending request to /api/send-results...')
-      const response = await fetch('/api/send-results', {
+      // Generate and send Results PDF (first email)
+      console.log('Generating Results PDF...')
+      const resultsPdfBase64 = await generateResultsPDFAsBase64(answers)
+      console.log('Results PDF size (base64):', Math.round(resultsPdfBase64.length / 1024), 'KB')
+
+      console.log('Sending first email (Results PDF)...')
+      const response1 = await fetch('/api/send-results', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           centerName,
-          resultsPdfBase64,
-          adminPdfBase64,
+          pdfBase64: resultsPdfBase64,
+          pdfType: 'results',
           completedAt
         }),
       })
 
-      console.log('Response status:', response.status)
-
-      let data
+      let data1
       try {
-        data = await response.json()
+        data1 = await response1.json()
       } catch (jsonError) {
-        console.error('Failed to parse response as JSON:', jsonError)
-        const text = await response.text()
-        console.error('Response text:', text)
-        throw new Error('Invalid response from server')
+        console.error('Failed to parse response1 as JSON:', jsonError)
+        throw new Error('Invalid response from server (email 1)')
       }
 
-      console.log('Response data:', data)
-
-      if (!response.ok) {
-        console.error('Server error:', data)
-        throw new Error(data.error || data.details || 'Failed to send email')
+      if (!response1.ok) {
+        console.error('Server error (email 1):', data1)
+        throw new Error(data1.error || data1.details || 'Failed to send first email')
       }
+
+      console.log('First email sent successfully:', data1)
+
+      // Generate and send Admin PDF (second email)
+      console.log('Generating Admin PDF...')
+      const adminPdfBase64 = await generateAdminPDFAsBase64(answers, questionsData)
+      console.log('Admin PDF size (base64):', Math.round(adminPdfBase64.length / 1024), 'KB')
+
+      console.log('Sending second email (Admin PDF)...')
+      const response2 = await fetch('/api/send-results', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          centerName,
+          pdfBase64: adminPdfBase64,
+          pdfType: 'admin',
+          completedAt
+        }),
+      })
+
+      let data2
+      try {
+        data2 = await response2.json()
+      } catch (jsonError) {
+        console.error('Failed to parse response2 as JSON:', jsonError)
+        throw new Error('Invalid response from server (email 2)')
+      }
+
+      if (!response2.ok) {
+        console.error('Server error (email 2):', data2)
+        throw new Error(data2.error || data2.details || 'Failed to send second email')
+      }
+
+      console.log('Second email sent successfully:', data2)
 
       setEmailStatus('success')
-      console.log('Email sent successfully:', data)
+      console.log('Both emails sent successfully!')
     } catch (error) {
       console.error('Error sending email:', error)
       console.error('Error details:', {

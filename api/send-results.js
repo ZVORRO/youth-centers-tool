@@ -11,47 +11,67 @@ export default async function handler(req, res) {
   try {
     const {
       centerName,
-      resultsPdfBase64,
-      adminPdfBase64,
+      pdfBase64,
+      pdfType, // 'results' or 'admin'
       completedAt
     } = req.body;
 
     // Validate required fields
-    if (!resultsPdfBase64 || !adminPdfBase64) {
-      return res.status(400).json({ error: 'Missing PDF data' });
+    if (!pdfBase64 || !pdfType) {
+      return res.status(400).json({ error: 'Missing PDF data or type' });
     }
 
     const adminEmail = process.env.ADMIN_EMAIL || 'zvoryhin.hd@gmail.com';
 
-    // Send email with Resend
-    const data = await resend.emails.send({
-      from: 'UNDP Youth Centers <onboarding@resend.dev>', // You'll change this after domain verification
-      to: [adminEmail],
-      subject: `Нова самооцінка доступності: ${centerName || 'Молодіжний центр'}`,
-      html: `
+    // Prepare email content based on PDF type
+    let subject, htmlContent, filename;
+
+    if (pdfType === 'results') {
+      subject = `Нова самооцінка доступності: ${centerName || 'Молодіжний центр'} (Рекомендації)`;
+      filename = `${centerName || 'Молодіжний_центр'}_звіт_з_рекомендаціями.pdf`;
+      htmlContent = `
         <h2>Нова самооцінка доступності молодіжного центру</h2>
         <p><strong>Назва центру:</strong> ${centerName || 'Не вказано'}</p>
         <p><strong>Дата завершення:</strong> ${completedAt || new Date().toLocaleString('uk-UA')}</p>
-        <p>У цьому листі знаходяться два PDF документи:</p>
-        <ul>
-          <li><strong>Звіт з рекомендаціями</strong> - аналіз доступності та практичні поради</li>
-          <li><strong>Всі відповіді</strong> - повний перелік відповідей на питання опитування</li>
-        </ul>
+        <p><strong>📊 Звіт з рекомендаціями</strong></p>
+        <p>У вкладенні знаходиться аналітичний звіт з оцінками доступності та практичними рекомендаціями щодо покращення.</p>
+        <p><em>Примітка: Наступним листом ви отримаєте повний звіт з усіма відповідями на питання опитування.</em></p>
         <hr />
         <p style="color: #666; font-size: 0.9em;">
           Цей лист було автоматично згенеровано інструментом самооцінки доступності<br />
           © 2026 UNDP Ukraine
         </p>
-      `,
+      `;
+    } else if (pdfType === 'admin') {
+      subject = `Нова самооцінка доступності: ${centerName || 'Молодіжний центр'} (Повні відповіді)`;
+      filename = `${centerName || 'Молодіжний_центр'}_повні_відповіді.pdf`;
+      htmlContent = `
+        <h2>Нова самооцінка доступності молодіжного центру</h2>
+        <p><strong>Назва центру:</strong> ${centerName || 'Не вказано'}</p>
+        <p><strong>Дата завершення:</strong> ${completedAt || new Date().toLocaleString('uk-UA')}</p>
+        <p><strong>📝 Повний звіт з відповідями</strong></p>
+        <p>У вкладенні знаходиться детальний звіт з усіма відповідями на питання опитування.</p>
+        <hr />
+        <p style="color: #666; font-size: 0.9em;">
+          Цей лист було автоматично згенеровано інструментом самооцінки доступності<br />
+          © 2026 UNDP Ukraine
+        </p>
+      `;
+    } else {
+      return res.status(400).json({ error: 'Invalid PDF type' });
+    }
+
+    // Send email with Resend
+    const data = await resend.emails.send({
+      from: 'UNDP Youth Centers <onboarding@resend.dev>',
+      to: [adminEmail],
+      subject: subject,
+      html: htmlContent,
       attachments: [
         {
-          filename: `${centerName || 'Молодіжний_центр'}_звіт_з_рекомендаціями.pdf`,
-          content: resultsPdfBase64.split(',')[1], // Remove data:application/pdf;base64, prefix
-        },
-        {
-          filename: `${centerName || 'Молодіжний_центр'}_повні_відповіді.pdf`,
-          content: adminPdfBase64.split(',')[1], // Remove data:application/pdf;base64, prefix
-        },
+          filename: filename,
+          content: pdfBase64.split(',')[1], // Remove data:application/pdf;base64, prefix
+        }
       ],
     });
 
