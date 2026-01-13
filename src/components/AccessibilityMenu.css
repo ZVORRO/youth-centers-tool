@@ -1,0 +1,260 @@
+/* Floating Eye Button */
+.accessibility-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0468B1 0%, #0355a0 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(4, 104, 177, 0.4);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(4, 104, 177, 0.5);
+}
+
+.accessibility-toggle:active {
+  transform: scale(0.95);
+}
+
+.accessibility-toggle svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Accessibility Menu */
+.accessibility-menu {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  width: 350px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accessibility-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.accessibility-menu-header h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0468B1;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #F5F5F5;
+  color: #333;
+}
+
+.accessibility-menu-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Accessibility Option */
+.accessibility-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #F8F9FA;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.accessibility-option:hover {
+  background: #F0F1F3;
+}
+
+.option-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.option-icon {
+  font-size: 1.25rem;
+}
+
+.option-label {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Toggle Button */
+.option-toggle {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 2px solid #0468B1;
+  background: white;
+  color: #0468B1;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.option-toggle:hover {
+  background: #F0F7FF;
+}
+
+.option-toggle.active {
+  background: #0468B1;
+  color: white;
+}
+
+/* Control Buttons */
+.option-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid #0468B1;
+  background: white;
+  color: #0468B1;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button:hover:not(:disabled) {
+  background: #F0F7FF;
+  transform: scale(1.05);
+}
+
+.control-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.control-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Reset Button */
+.reset-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #EE402D;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.reset-button:hover {
+  background: #D93626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(238, 64, 45, 0.3);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+/* Overlay */
+.accessibility-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9998;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accessibility-menu {
+    right: 10px;
+    bottom: 80px;
+    width: calc(100vw - 20px);
+    max-width: 350px;
+  }
+
+  .accessibility-toggle {
+    right: 10px;
+    bottom: 10px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .accessibility-toggle svg {
+    width: 26px;
+    height: 26px;
+  }
+}

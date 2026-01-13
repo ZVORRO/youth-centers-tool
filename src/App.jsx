@@ -1,12 +1,15 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AssessmentProvider } from './context/AssessmentContext'
+import { AccessibilityProvider } from './context/AccessibilityContext'
+import AccessibilityMenu from './components/AccessibilityMenu'
 import Landing from './pages/Landing'
 import Instructions from './pages/Instructions'
 import ModeSelection from './pages/ModeSelection'
 import Assessment from './pages/Assessment'
 import SectionComplete from './pages/SectionComplete'
 import Results from './pages/Results'
+import './styles/high-contrast.css'
 
 function AppContent() {
   const location = useLocation()
@@ -71,17 +74,21 @@ function AppContent() {
         <Route path="/section-complete/:sectionId" element={<SectionComplete />} />
         <Route path="/results" element={<Results />} />
       </Routes>
+
+      <AccessibilityMenu />
     </>
   )
 }
 
 function App() {
   return (
-    <AssessmentProvider>
-      <Router>
-        <AppContent />
-      </Router>
-    </AssessmentProvider>
+    <AccessibilityProvider>
+      <AssessmentProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </AssessmentProvider>
+    </AccessibilityProvider>
   )
 }
 

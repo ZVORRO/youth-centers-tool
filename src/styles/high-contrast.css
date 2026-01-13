@@ -1,0 +1,562 @@
+/* Dark Contrast Mode Styles - Black background with White text */
+
+.high-contrast-dark {
+  --bg-light: #000000;
+  --text-primary: #FFFFFF;
+  --text-secondary: #E0E0E0;
+  --primary-color: #FFFFFF;
+  --error-color: #FFFFFF;
+  --warning-color: #FFFFFF;
+  --success-color: #FFFFFF;
+  --border-color: #FFFFFF;
+}
+
+/* Base styles */
+.high-contrast-dark body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-dark,
+.high-contrast-dark * {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Headings */
+.high-contrast-dark h1,
+.high-contrast-dark h2,
+.high-contrast-dark h3,
+.high-contrast-dark h4,
+.high-contrast-dark h5,
+.high-contrast-dark h6 {
+  color: #FFFFFF !important;
+}
+
+/* Paragraphs and text */
+.high-contrast-dark p,
+.high-contrast-dark span,
+.high-contrast-dark div,
+.high-contrast-dark li,
+.high-contrast-dark label {
+  color: #FFFFFF !important;
+}
+
+/* Buttons */
+.high-contrast-dark button,
+.high-contrast-dark .btn {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.high-contrast-dark button:hover,
+.high-contrast-dark .btn:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+.high-contrast-dark button:disabled {
+  opacity: 0.5;
+  border-color: #666666 !important;
+}
+
+/* Links */
+.high-contrast-dark a {
+  color: #FFFFFF !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast-dark a:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+/* Input fields */
+.high-contrast-dark input,
+.high-contrast-dark textarea,
+.high-contrast-dark select {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.high-contrast-dark input:focus,
+.high-contrast-dark textarea:focus,
+.high-contrast-dark select:focus {
+  outline: 2px solid #FFFFFF !important;
+  outline-offset: 2px;
+}
+
+.high-contrast-dark input::placeholder,
+.high-contrast-dark textarea::placeholder {
+  color: #CCCCCC !important;
+}
+
+/* Radio buttons and checkboxes */
+.high-contrast-dark input[type="radio"],
+.high-contrast-dark input[type="checkbox"] {
+  border: 2px solid #FFFFFF !important;
+  background-color: #000000 !important;
+}
+
+.high-contrast-dark input[type="radio"]:checked,
+.high-contrast-dark input[type="checkbox"]:checked {
+  background-color: #FFFFFF !important;
+}
+
+.high-contrast-dark input[type="radio"]:checked::after,
+.high-contrast-dark input[type="checkbox"]:checked::after {
+  background-color: #000000 !important;
+}
+
+/* Cards and containers */
+.high-contrast-dark .card,
+.high-contrast-dark .section-card,
+.high-contrast-dark .recommendation-card,
+.high-contrast-dark .category-item,
+.high-contrast-dark .question-renderer,
+.high-contrast-dark .instruction-block {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+/* Progress bars */
+.high-contrast-dark .progress-bar-container {
+  background-color: #333333 !important;
+}
+
+.high-contrast-dark .progress-bar,
+.high-contrast-dark .section-score-fill,
+.high-contrast-dark .category-bar-fill {
+  background-color: #FFFFFF !important;
+}
+
+/* Score circles */
+.high-contrast-dark .score-circle {
+  border-color: #FFFFFF !important;
+  background-color: #000000 !important;
+}
+
+.high-contrast-dark .score-number,
+.high-contrast-dark .score-percentage {
+  color: #FFFFFF !important;
+}
+
+/* Tables */
+.high-contrast-dark table,
+.high-contrast-dark th,
+.high-contrast-dark td {
+  border: 1px solid #FFFFFF !important;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* Modals */
+.high-contrast-dark .modal,
+.high-contrast-dark .explanation-modal {
+  background-color: #000000 !important;
+  border: 3px solid #FFFFFF !important;
+}
+
+.high-contrast-dark .modal-content {
+  background-color: #000000 !important;
+}
+
+/* Accessibility menu - keep it visible */
+.high-contrast-dark .accessibility-toggle {
+  background-color: #FFFFFF !important;
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast-dark .accessibility-toggle svg {
+  filter: invert(1);
+}
+
+.high-contrast-dark .accessibility-toggle:hover {
+  background-color: #CCCCCC !important;
+}
+
+.high-contrast-dark .accessibility-menu {
+  background-color: #000000 !important;
+  border: 3px solid #FFFFFF !important;
+}
+
+.high-contrast-dark .accessibility-menu-header,
+.high-contrast-dark .accessibility-menu-content {
+  background-color: #000000 !important;
+}
+
+.high-contrast-dark .accessibility-option {
+  background-color: #1a1a1a !important;
+  border: 1px solid #FFFFFF !important;
+}
+
+.high-contrast-dark .option-toggle,
+.high-contrast-dark .control-button {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.high-contrast-dark .option-toggle.active {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+.high-contrast-dark .option-toggle:hover,
+.high-contrast-dark .control-button:hover:not(:disabled) {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+.high-contrast-dark .reset-button {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.high-contrast-dark .reset-button:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+/* Icons - make them white */
+.high-contrast-dark .category-icon,
+.high-contrast-dark .user-categories-display img {
+  filter: brightness(0) invert(1);
+}
+
+/* Images - invert for visibility */
+.high-contrast-dark img:not(.category-icon):not(.user-categories-display img) {
+  filter: invert(1) contrast(1.2);
+}
+
+/* SVG icons */
+.high-contrast-dark svg:not(.accessibility-toggle svg) {
+  filter: invert(1);
+}
+
+/* Reading ruler */
+.high-contrast-dark .reading-ruler {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border-top: 2px solid #FFFFFF !important;
+  border-bottom: 2px solid #FFFFFF !important;
+}
+
+/* Overlay */
+.high-contrast-dark .accessibility-overlay {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Preserve UNDP logo visibility */
+.high-contrast-dark .undp-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Email status messages */
+.high-contrast-dark .email-status {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+/* Breadcrumbs */
+.high-contrast-dark .breadcrumb {
+  color: #FFFFFF !important;
+}
+
+/* Navigation */
+.high-contrast-dark nav,
+.high-contrast-dark .assessment-navigation {
+  background-color: #000000 !important;
+}
+
+/* ========================================== */
+/* Light Contrast Mode - White background with Black text */
+/* For elderly users who prefer light backgrounds */
+/* ========================================== */
+
+.high-contrast-light {
+  --bg-light: #FFFFFF;
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --primary-color: #000000;
+  --error-color: #000000;
+  --warning-color: #000000;
+  --success-color: #000000;
+  --border-color: #000000;
+}
+
+/* Base styles */
+.high-contrast-light body {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+.high-contrast-light,
+.high-contrast-light * {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Headings */
+.high-contrast-light h1,
+.high-contrast-light h2,
+.high-contrast-light h3,
+.high-contrast-light h4,
+.high-contrast-light h5,
+.high-contrast-light h6 {
+  color: #000000 !important;
+}
+
+/* Paragraphs and text */
+.high-contrast-light p,
+.high-contrast-light span,
+.high-contrast-light div,
+.high-contrast-light li,
+.high-contrast-light label {
+  color: #000000 !important;
+}
+
+/* Buttons */
+.high-contrast-light button,
+.high-contrast-light .btn {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast-light button:hover,
+.high-contrast-light .btn:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-light button:disabled {
+  opacity: 0.5;
+  border-color: #999999 !important;
+}
+
+/* Links */
+.high-contrast-light a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast-light a:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* Input fields */
+.high-contrast-light input,
+.high-contrast-light textarea,
+.high-contrast-light select {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast-light input:focus,
+.high-contrast-light textarea:focus,
+.high-contrast-light select:focus {
+  outline: 2px solid #000000 !important;
+  outline-offset: 2px;
+}
+
+.high-contrast-light input::placeholder,
+.high-contrast-light textarea::placeholder {
+  color: #333333 !important;
+}
+
+/* Radio buttons and checkboxes */
+.high-contrast-light input[type="radio"],
+.high-contrast-light input[type="checkbox"] {
+  border: 2px solid #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+.high-contrast-light input[type="radio"]:checked,
+.high-contrast-light input[type="checkbox"]:checked {
+  background-color: #000000 !important;
+}
+
+.high-contrast-light input[type="radio"]:checked::after,
+.high-contrast-light input[type="checkbox"]:checked::after {
+  background-color: #FFFFFF !important;
+}
+
+/* Cards and containers */
+.high-contrast-light .card,
+.high-contrast-light .section-card,
+.high-contrast-light .recommendation-card,
+.high-contrast-light .category-item,
+.high-contrast-light .question-renderer,
+.high-contrast-light .instruction-block {
+  background-color: #FFFFFF !important;
+  border: 2px solid #000000 !important;
+}
+
+/* Progress bars */
+.high-contrast-light .progress-bar-container {
+  background-color: #CCCCCC !important;
+}
+
+.high-contrast-light .progress-bar,
+.high-contrast-light .section-score-fill,
+.high-contrast-light .category-bar-fill {
+  background-color: #000000 !important;
+}
+
+/* Score circles */
+.high-contrast-light .score-circle {
+  border-color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+.high-contrast-light .score-number,
+.high-contrast-light .score-percentage {
+  color: #000000 !important;
+}
+
+/* Tables */
+.high-contrast-light table,
+.high-contrast-light th,
+.high-contrast-light td {
+  border: 1px solid #000000 !important;
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+/* Modals */
+.high-contrast-light .modal,
+.high-contrast-light .explanation-modal {
+  background-color: #FFFFFF !important;
+  border: 3px solid #000000 !important;
+}
+
+.high-contrast-light .modal-content {
+  background-color: #FFFFFF !important;
+}
+
+/* Accessibility menu - keep it visible */
+.high-contrast-light .accessibility-toggle {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.high-contrast-light .accessibility-toggle svg {
+  filter: none;
+}
+
+.high-contrast-light .accessibility-toggle svg path {
+  fill: #FFFFFF !important;
+}
+
+.high-contrast-light .accessibility-toggle:hover {
+  background-color: #333333 !important;
+}
+
+.high-contrast-light .accessibility-menu {
+  background-color: #FFFFFF !important;
+  border: 3px solid #000000 !important;
+}
+
+.high-contrast-light .accessibility-menu-header,
+.high-contrast-light .accessibility-menu-content {
+  background-color: #FFFFFF !important;
+}
+
+.high-contrast-light .accessibility-option {
+  background-color: #F5F5F5 !important;
+  border: 1px solid #000000 !important;
+}
+
+.high-contrast-light .option-toggle,
+.high-contrast-light .control-button {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast-light .option-toggle.active {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-light .option-toggle:hover,
+.high-contrast-light .control-button:hover:not(:disabled) {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-light .reset-button {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.high-contrast-light .reset-button:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* Icons - make them black */
+.high-contrast-light .category-icon,
+.high-contrast-light .user-categories-display img {
+  filter: brightness(0);
+}
+
+/* Images - keep as is for light mode */
+.high-contrast-light img:not(.category-icon):not(.user-categories-display img) {
+  filter: contrast(1.2);
+}
+
+/* SVG icons */
+.high-contrast-light svg:not(.accessibility-toggle svg) {
+  filter: none;
+}
+
+.high-contrast-light svg:not(.accessibility-toggle svg) path {
+  fill: #000000 !important;
+}
+
+/* Reading ruler */
+.high-contrast-light .reading-ruler {
+  background-color: rgba(255, 255, 0, 0.4) !important;
+  border-top: 2px solid #000000 !important;
+  border-bottom: 2px solid #000000 !important;
+}
+
+/* Overlay */
+.high-contrast-light .accessibility-overlay {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* UNDP logo */
+.high-contrast-light .undp-logo {
+  filter: none;
+}
+
+/* Email status messages */
+.high-contrast-light .email-status {
+  background-color: #FFFFFF !important;
+  border: 2px solid #000000 !important;
+}
+
+/* Breadcrumbs */
+.high-contrast-light .breadcrumb {
+  color: #000000 !important;
+}
+
+/* Navigation */
+.high-contrast-light nav,
+.high-contrast-light .assessment-navigation {
+  background-color: #FFFFFF !important;
+}
