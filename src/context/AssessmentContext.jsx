@@ -4,17 +4,20 @@ import questionsData from '../data/questions.json'
 const AssessmentContext = createContext()
 
 export function AssessmentProvider({ children }) {
+  // Initialize mode from localStorage immediately (synchronously)
   const [answers, setAnswers] = useState({})
   const [currentSection, setCurrentSection] = useState(null)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const [mode, setMode] = useState(null)
+  const [mode, setMode] = useState(() => {
+    // Load mode synchronously during initialization
+    return localStorage.getItem('assessment_mode')
+  })
   const [assessmentStarted, setAssessmentStarted] = useState(false)
 
   // Load saved data from localStorage on mount
   useEffect(() => {
     const savedAnswers = localStorage.getItem('assessment_answers')
     const savedProgress = localStorage.getItem('assessment_progress')
-    const savedMode = localStorage.getItem('assessment_mode')
 
     if (savedAnswers) {
       setAnswers(JSON.parse(savedAnswers))
@@ -25,10 +28,6 @@ export function AssessmentProvider({ children }) {
       setCurrentSection(progress.sectionId)
       setCurrentQuestionIndex(progress.questionIndex || 0)
       setAssessmentStarted(true)
-    }
-
-    if (savedMode) {
-      setMode(savedMode)
     }
   }, [])
 

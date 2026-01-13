@@ -16,7 +16,8 @@
       "Bash(node find_sorting.cjs:*)",
       "Bash(for file in icons/*.png)",
       "Bash(do cp \"$file\" \"public/icons/\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(npm run build:*)"
     ]
   }
 }
