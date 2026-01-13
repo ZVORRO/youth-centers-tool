@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(node -e:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run dev:*)",
+      "Bash(node count_questions.js:*)",
+      "Bash(node count_questions.cjs:*)",
+      "Bash(node convert_questions.cjs:*)",
+      "Bash(node test_parse.cjs:*)",
+      "Bash(node check_subsection.cjs:*)",
+      "Bash(node find_question.cjs:*)",
+      "Bash(node check_sorting.cjs:*)",
+      "Bash(node find_sorting.cjs:*)",
+      "Bash(for file in icons/*.png)",
+      "Bash(do cp \"$file\" \"public/icons/\")",
+      "Bash(done)"
+    ]
+  }
+}

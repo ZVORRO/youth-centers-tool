@@ -1,0 +1,114 @@
+.section-complete-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light);
+  padding: var(--spacing-xl) 0;
+}
+
+.complete-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section-progress-indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.progress-indicator {
+  width: 80px;
+  height: 8px;
+  background-color: #E5E5E5;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.progress-indicator.completed {
+  background-color: var(--primary-color);
+}
+
+.progress-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.success-illustration {
+  margin: var(--spacing-xl) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.complete-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.complete-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.overall-progress-info {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background-color: var(--bg-light);
+  border-radius: var(--radius-md);
+}
+
+.overall-progress-info p {
+  margin: var(--spacing-xs) 0;
+  color: var(--text-primary);
+  font-size: 1.125rem;
+}
+
+.overall-progress-info strong {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.small-text {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+}
+
+.complete-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .complete-title {
+    font-size: 1.5rem;
+  }
+
+  .complete-subtitle {
+    font-size: 1rem;
+  }
+
+  .progress-indicator {
+    width: 60px;
+  }
+}

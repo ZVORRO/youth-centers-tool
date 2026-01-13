@@ -1,0 +1,2984 @@
+{
+  "meta": {
+    "version": "2.0",
+    "language": "uk",
+    "totalSections": 3,
+    "generatedAt": "2026-01-13"
+  },
+  "userCategories": {
+    "wheelchair": {
+      "id": "wheelchair",
+      "name": "Люди на інвалідному кріслі",
+      "icon": "wheelchair"
+    },
+    "crutches": {
+      "id": "crutches",
+      "name": "Люди на милицях",
+      "icon": "crutches"
+    },
+    "legProsthesis": {
+      "id": "legProsthesis",
+      "name": "Люди з протезом ноги",
+      "icon": "legProsthesis"
+    },
+    "armProsthesis": {
+      "id": "armProsthesis",
+      "name": "Люди з протезом руки",
+      "icon": "armProsthesis"
+    },
+    "weakHand": {
+      "id": "weakHand",
+      "name": "Люди зі слабкою моторикою рук",
+      "icon": "weakHand"
+    },
+    "stroller": {
+      "id": "stroller",
+      "name": "Батьки з дитячим візочком",
+      "icon": "stroller"
+    },
+    "parentWithChild": {
+      "id": "parentWithChild",
+      "name": "Батьки з маленькими дітьми",
+      "icon": "parentWithChild"
+    },
+    "visualImpairment": {
+      "id": "visualImpairment",
+      "name": "Люди з порушенням зору",
+      "icon": "visualImpairment"
+    },
+    "hearingImpairment": {
+      "id": "hearingImpairment",
+      "name": "Люди з порушенням слуху",
+      "icon": "hearingImpairment"
+    },
+    "orientationDifficulty": {
+      "id": "orientationDifficulty",
+      "name": "Люди зі складнощами орієнтації в просторі",
+      "icon": "orientationDifficulty"
+    },
+    "heightVariation": {
+      "id": "heightVariation",
+      "name": "Люди різного зросту",
+      "icon": "heightVariation"
+    },
+    "foreignLanguage": {
+      "id": "foreignLanguage",
+      "name": "Іноземці / люди з іншою мовою",
+      "icon": "foreignLanguage"
+    },
+    "sensoryTriggers": {
+      "id": "sensoryTriggers",
+      "name": "Люди з чутливістю до сенсорних подразників",
+      "icon": "sensoryTriggers"
+    },
+    "respiratory": {
+      "id": "respiratory",
+      "name": "Люди з респіраторними проблемами",
+      "icon": "respiratory"
+    },
+    "guideDog": {
+      "id": "guideDog",
+      "name": "Люди з собакою-поводирем",
+      "icon": "guideDog"
+    },
+    "mobilityGeneral": {
+      "id": "mobilityGeneral",
+      "name": "Люди з обмеженою мобільністю (загально)",
+      "icon": "mobilityGeneral"
+    },
+    "allPeople": {
+      "id": "allPeople",
+      "name": "Всі люди",
+      "icon": "allPeople"
+    }
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "Питання молодіжним центрам та просторам",
+      "description": "",
+      "subsections": [
+        {
+          "id": "section1_sub1",
+          "title": "Основні питання",
+          "questions": [
+            {
+              "id": "q1_1",
+              "text": "Повна назва молодіжного простору",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_2",
+              "text": "Рік створення (рік реєстрації, за наявності)",
+              "type": "dropdown",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": {
+                "type": "yearRange",
+                "from": 1991,
+                "to": 2026
+              }
+            },
+            {
+              "id": "q1_1_3",
+              "text": "Установчі документи (рішення №; статут/положення; юр.особа; у процесі створення)",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_4",
+              "text": "Територіальний статус простору",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "місцевий",
+                "міський",
+                "селищний",
+                "сільський"
+              ]
+            },
+            {
+              "id": "q1_1_5",
+              "text": "Організаційний статус вашого молодіжного простору",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "комунальний заснований місцевою владою",
+                "комунальний заснований міською або обласною радою",
+                "громадська організація",
+                "благодійна організація",
+                "структурний підрозділ управління або комунального закладу"
+              ]
+            },
+            {
+              "id": "q1_1_6",
+              "text": "Ідентифікаційний код юр. особи (ЄДРПОУ) на базі якої працює простір",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_7",
+              "text": "Юридична адреса",
+              "type": "dropdown",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": {
+                "type": "oblastList"
+              }
+            },
+            {
+              "id": "q1_1_8",
+              "text": "Фактичне місце перебування молодіжного простору",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_9",
+              "text": "На базі/території якого закладу діє молодіжний простір",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_10",
+              "text": "Інформація про керівника або заступника",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_11",
+              "text": "Контакти молодіжного простору",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_12",
+              "text": "Посилання на соціальні мережі молодіжного простору",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_13",
+              "text": "Чи зазнав ваш центр пошкодження внаслідок збройної агресії за останні 12 місяців",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "так",
+                "ні"
+              ]
+            },
+            {
+              "id": "q1_1_14",
+              "text": "Фактична площа приміщення на якій функціонує молодіжний простір (м²).",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_15",
+              "text": "Чи працює в вашому просторі психолог?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "працює",
+                "як штатна одиниця",
+                "/ як волонтер / не маємо",
+                "але потребуємо / не маємо потреби / працює в проєкті за грантові кошти"
+              ]
+            },
+            {
+              "id": "q1_1_16",
+              "text": "Чи працює у вашому просторі соціальний працівник (педагог) для надання комплексної допомоги молоді?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "працює / не працює / співпрацює з іншими спеціалістами (психолог",
+                "юрист",
+                "тощо"
+              ]
+            },
+            {
+              "id": "q1_1_17",
+              "text": "Чи маєте ви, відповідно до штатного розпису, фахівців по роботі з молоддю (він же молодіжний працівник)?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "працює",
+                "як штатна одиниця",
+                "/ як волонтер / не маємо",
+                "але потребуємо / не маємо потреби / працює в проєкті за грантові кошти"
+              ]
+            },
+            {
+              "id": "q1_1_18",
+              "text": "Якщо так, то зазначте кількість",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_19",
+              "text": "Чи є у вас в команді людина з інвалідністю (волонтери або в штаті)",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_20",
+              "text": "Чи є працівники, які можуть надати необхідну допомогу особам з інвалідністю?",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_21",
+              "text": "Зазначте кількість людей, хто проходив навчання і отримав свідоцтво про проходження тренінгів спеціалізованого рівня",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_22",
+              "text": "Зазначте кількість волонтерів молодіжного простору, хто має сертифікат тренера, а також зазначте назву програм у яких вони сертифіковані",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q1_1_23",
+              "text": "В яких напрямках команда молодіжного центру/простору підсилення компетентностей?",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section2",
+      "title": "Програмна діяльність",
+      "description": "",
+      "subsections": [
+        {
+          "id": "section2_sub1",
+          "title": "Основні питання",
+          "questions": [
+            {
+              "id": "q2_1_1",
+              "text": "Чи наявні послуги з коворкінгу, заходу під ключ тощо?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "Так",
+                "ні"
+              ]
+            },
+            {
+              "id": "q2_1_2",
+              "text": "Вкажіть основні напрямки діяльності молодіжного простору.",
+              "type": "checkbox",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "Волонтерство та гуманітарне реагування",
+                "Залучення молоді до підприємницької діяльності (соц.підприємництво)",
+                "Ментальне здоров’я",
+                "Освіта та просвітницька діяльність",
+                "Підтримка ініціатив молоді",
+                "Розвиток участі",
+                "Інтеграція ВПО",
+                "Утвердження української та громадянської ідентичності",
+                "Робота з ветеранами, ветеранками та членами їхніх родин",
+                "Таборування",
+                "Екологія та сталий розвиток",
+                "Інше (зазначити)"
+              ]
+            },
+            {
+              "id": "q2_1_3",
+              "text": "Чи є діяльність молодіжного центру/ простору безкоштовною?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "Так, всі послуги є безкоштовними",
+                "Частково, певні події",
+                "сервіси мають фіксовану вартість"
+              ]
+            },
+            {
+              "id": "q2_1_4",
+              "text": "Які послуги хотіли б впровадити",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q2_1_5",
+              "text": "Які програмні продукти розроблені командою молодіжного простору? Опишіть за наявності",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q2_1_6",
+              "text": "Зазначте систему моніторингу та оцінки роботи молодіжного простору для забезпечення якості та ефективності його діяльності?",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q2_1_7",
+              "text": "Кількість відвідувачів МП за 2024 рік",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q2_1_8",
+              "text": "З якими цільовими групами працює ваш молодіжний простір?",
+              "type": "checkbox",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "Дошкільнята",
+                "Шкільна молодь",
+                "Студентська молодь",
+                "Молоді ветеран(к)и",
+                "ВПО",
+                "Люди з інвалідністю",
+                "Молоді батьки",
+                "Люди старше 35 років"
+              ]
+            },
+            {
+              "id": "q2_1_9",
+              "text": "Зазначте кількість заходів, що проводяться у вашому просторі:",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false
+            },
+            {
+              "id": "q2_1_10",
+              "text": "Чи отримував ваш молодіжний простір від міжнародних організацій фінансову та матеріально-технічну допомогу ДО повномасштабного вторгнення?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "Так",
+                "ні"
+              ]
+            },
+            {
+              "id": "q2_1_11",
+              "text": "Чи отримував ваш молодіжний простір від міжнародних організацій фінансову та матеріально-технічну допомогу ПІД ЧАС повномасштабного вторгнення?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "Так",
+                "ні"
+              ]
+            },
+            {
+              "id": "q2_1_12",
+              "text": "Чи потребує наразі ваш молодіжний простір фінансової та матеріально-технічної допомоги від міжнародних організацій?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": false,
+              "options": [
+                "Так",
+                "ні"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section3",
+      "title": "Доступність молодіжного центру / простору",
+      "description": "",
+      "subsections": [
+        {
+          "id": "section3_sub1",
+          "title": "Підрозділ 3.1",
+          "questions": [
+            {
+              "id": "q3_1_1",
+              "text": "Як Ви вважаєте, чи є ваш молодіжний простір безбар’єрним?",
+              "type": "matrix",
+              "required": true,
+              "categories": [],
+              "isAccessibilityQuestion": true,
+              "explanation": "За посиланням ви знайдете довідник безбар'єрності",
+              "rows": [
+                "Фізична",
+                "Інформаційна",
+                "Цифрова",
+                "Освітня",
+                "Економічна",
+                "Суспільна"
+              ],
+              "columns": [
+                "Так, повНістю",
+                "Так, Частково",
+                "Ні, але працюємо в цьому напрямку",
+                "Поки Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні, але працюємо в цьому напрямку",
+                "Поки ні",
+                "Так, Частково"
+              ]
+            },
+            {
+              "id": "q3_1_2",
+              "text": "Графік роботи МП",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "explanation": "Якщо ви не працюєте після 17:00, це суттєво обмежує можливість молодих людей приходити на події після навчання/роботи"
+            },
+            {
+              "id": "q3_1_3",
+              "text": "Чи проводите ви заходи у вихідні дні?",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "explanation": "Важливо організувати роботу мол.центру і на вихідних, коли немає активного навчання або роботи у молодих людей."
+            },
+            {
+              "id": "q3_1_4",
+              "text": "Зазначте які функціональні зони наявні у Вашому молодіжному центрі. \nОдна кімната може виконувати декілька функцій, проте повинні бути виокремлені зони",
+              "type": "checkbox",
+              "required": true,
+              "categories": [],
+              "explanation": "Щоб якісно оцінити доступність молодіжного центру, необхідно буде провести аудит доступності по кожній зоні.",
+              "options": [
+                "Прилегла територія навколо молодіжного центру",
+                "Вхідна група",
+                "Зона рецепції",
+                "Гардероб",
+                "Коридор",
+                "Загальний лекторій",
+                "Відпочинкова зона",
+                "Коворкінг",
+                "Кухня",
+                "Зона прийому їжі",
+                "Санвузол - санітарно-гігієнічні приміщення",
+                "Укриття"
+              ]
+            },
+            {
+              "id": "q3_1_5",
+              "text": "Заміряйте всі наявні вхідні портали, двері у кімнати молодіжного центру. \nВідкрийте двері та заміряйте ширину проходу. Якщо це двостулкові двері - то не потрібно відкривати обидві частини, заміряйте ширину однієї стулки.",
+              "type": "text",
+              "required": true,
+              "categories": [],
+              "explanation": "Якщо відповідь менше 90 см - то з’являється вікно: “Ваш простір не може бути доступним для людей в кріслі колісному, адже ширина дверних проходів повинна бути від 90 см”."
+            }
+          ]
+        },
+        {
+          "id": "section3_sub2",
+          "title": "Підрозділ 3.2. Прилегла територія навколо молодіжного центру.",
+          "questions": [
+            {
+              "id": "q3_2_1",
+              "text": "Чи наявна поруч із молодіжним центром зупинка громадського транспорту?",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "mobilityGeneral",
+                "stroller",
+                "crutches"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, поруч - 5 хв пішки",
+                "Так, 10-20 хв пішки",
+                "Громада є малою, все в пішій доступності",
+                "Ні, зупинка є віддаленою від приміщення молодіжного центру"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_2",
+              "text": "Тверде, рівне покриття на пішохідних доріжках, що ведуть до молодіжного центру/ простору?",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "stroller",
+                "wheelchair",
+                "crutches",
+                "legProsthesis",
+                "mobilityGeneral"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "так, частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_3",
+              "text": "Безпороговий вхід або дублювання сходів нормативним пандусом з поручнями",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "stroller",
+                "legProsthesis",
+                "crutches"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "так, частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_4",
+              "text": "Проходи шириною не менше 90 см та вільний простір для маневрування на поворотах 1,5*1,5 м на всій території навколо молодіжного центру",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "stroller",
+                "heightVariation"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_5",
+              "text": "Контрастне маркування важливих елементів (дверних ручок, вимикачів і т.д.)",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment",
+                "orientationDifficulty",
+                "foreignLanguage",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_6",
+              "text": "Дублювання інформації тактильно та шрифтом Брайля",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_7",
+              "text": "Прості інструкції, навігація надана простою мовою та з піктограмами",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "foreignLanguage",
+                "orientationDifficulty",
+                "hearingImpairment",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_8",
+              "text": "Відсутність яскравих кольорових, світлових, звукових, ароматичних тригерів",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "orientationDifficulty",
+                "respiratory",
+                "parentWithChild",
+                "hearingImpairment",
+                "visualImpairment",
+                "sensoryTriggers",
+                "guideDog"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_9",
+              "text": "Усі бордюри на переходах понижені в нуль.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "mobilityGeneral",
+                "stroller",
+                "wheelchair",
+                "crutches",
+                "heightVariation"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "дивіться приклад в \"Розкажи детальніше\"||IMAGE:illustrations/low_curb",
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_10",
+              "text": "Пішохідні доріжки відділені від велодоріжок і автомобільного руху.",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_11",
+              "text": "Гілля дерев або конструкції не нависають нижче 2,1 м над тротуаром.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "stroller",
+                "wheelchair",
+                "crutches",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_2_12",
+              "text": "Якщо поруч є паркомісця, то 10% від загальної їх кількості (але не менше одного) промарковані як “місця для людей із інвалідністю”",
+              "type": "text",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "recommendationTrigger": []
+            },
+            {
+              "id": "q3_2_13",
+              "text": "Паркомісця для людей із інвалідністю пристосовані для людей з інвалідністю: розміщені максимально близько до входу (до 50 м), шириною 3,5 м і довжиною 5 м, з пониженням бордюру в нуль і відповідною горизонтальною розміткою та відповідним дорожнім знаком",
+              "type": "text",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "recommendationTrigger": [
+                "Не відповідає вимогам",
+                "не відповідає"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub3",
+          "title": "Підрозділ 3.3. Вхідна група",
+          "questions": [
+            {
+              "id": "q3_3_1",
+              "text": "Наявний безпороговий вхід",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "legProsthesis",
+                "stroller",
+                "crutches"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_2",
+              "text": "Вхід та проходи шириною не менше 90 см та вільний простір для маневрування 1,5*1,5 м на всій території молодіжного центру",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "heightVariation",
+                "wheelchair",
+                "stroller",
+                "crutches"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_3",
+              "text": "Наявне дублювання пандусом з поручнями відповідно до норм",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "stroller"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_4",
+              "text": "Вхід до центру є легко помітним — контрастним відносно фасаду",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_5",
+              "text": "Над входом є навіс, який покриває всю зону ґанку і захищає від дощу",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_6",
+              "text": "Біля входу, ліворуч від дверей (не на дверях!) розміщується інформаційна табличка про молодіжний центр, виконана з контрастом до стіни",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_7",
+              "text": "Інформація на табличці дублюється шрифтом Брайля",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_8",
+              "text": "Інформаційна табличка розміщена на висоті 1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "heightVariation"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_9",
+              "text": "Табличка має обов’язково містити інформацію з назвою центру / простору, розкладом роботи (дні та години) українською мовою, логотип.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_10",
+              "text": "Табличка англійською мовою дублює інформацію про молодіжний центр",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "foreignLanguage"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_11",
+              "text": "Табличка містити номер телефону приймальні та адресу молодіжного центру/простору",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_12",
+              "text": "Дзвінок розміщений на висоті 80-90 см від підлоги",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "heightVariation"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_13",
+              "text": "Розміщений контрастний вказівник щодо найближчого укриття.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_14",
+              "text": "Над дверима та табличкою із інформацією розміщено вуличне освітлення",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_15",
+              "text": "У разі коли основний вхід є бар’єрним, до доступного входу спрямовують покажчики із міжнародним символом доступності.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "stroller"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_16",
+              "text": "інформація про доступність молодіжного центру/простору розміщена на офіційних сайтах громади та комунальних установ",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_17",
+              "text": "Навантаження при відкриванні вхідних дверей повинно становити не більше 3 кг (вимірюється динамометром)",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "weakHand"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_18",
+              "text": "Дверна ручка є натискного типу, або типу «скоба»",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "weakHand"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_19",
+              "text": "Якщо вхід - то скляні двері, то вони мають контрастне маркування шириною не менше 10 см, на висоті 1–1,5 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_20",
+              "text": "Якщо вхід - то дерев’яні або металеві двері, то вони мають оглядовий отвір (віконце)",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_21",
+              "text": "Тамбур розміром не менше 2,1 × 2,2 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "stroller"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_22",
+              "text": "Якщо вхід не на одному рівні з тротуаром, то є пандус і сходи — з нормативними поручнями з обох сторін, на висотах 0,7 та 0,9 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "stroller",
+                "legProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_23",
+              "text": "Якщо наявний пандус, він відповідає вимогам: кут нахилу пандуса — не більше 4,5°, висота підйому — до 0,8 м, ширина — 1,2 м (або 1,8 м для двостороннього руху)",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "stroller",
+                "legProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_24",
+              "text": "пандус має бортик з відкритого боку (висотою 5 см) і горизонтальні майданчики 1,5 × 1,5 м через кожні 6 м довжини",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "stroller",
+                "legProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_25",
+              "text": "Сходи до молодіжного центру відповідають стандарту: висота сходинки — до 15 см, глибина — не менше 30 см, краї — заокруглені (але без звісу над підсходинкою), з бортиками з боків. Обов’язково має бути підсходинка.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "stroller",
+                "legProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_26",
+              "text": "Поручні наявні з обох боків пандуса та сходів,  контрастного кольору, гладкі, неслизькі.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "legProsthesis",
+                "armProsthesis",
+                "wheelchair",
+                "crutches",
+                "stroller"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_27",
+              "text": "Висота поручнів — 0,7 та 0,9 м, з горизонтальними завершеннями, що виступає зверху та знизу пандуса та сходів на 30 см. Відстань від поручня до стіни — не менше 5 см, поручень круглий у перерізі, діаметр поручня — 40–45 мм.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "legProsthesis",
+                "armProsthesis",
+                "wheelchair",
+                "crutches",
+                "stroller",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "якщо є цільова аудиторія дітей до 10 років, рекомендується влаштувати додаткові поручні на висоті 0,5 м",
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_3_28",
+              "text": "Перед початком та кінцем сходів є попереджувальна тактильна смуга",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub4",
+          "title": "Підрозділ 3.4. Зона рецепції",
+          "questions": [
+            {
+              "id": "q3_4_1",
+              "text": "Стійка рецепції розміщена на двох рівнях: 1,1 м та 0,8 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "parentWithChild",
+                "crutches",
+                "armProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_4_2",
+              "text": "Вимикачі світла розміщені на висоті 80-90 см від підлоги та контрастні до кольору стіни",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_4_3",
+              "text": "Наявні різні сидіння висотою 0,45 м, 0,55 м та 0,9 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "legProsthesis",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_4_4",
+              "text": "Прохідна зона не менше 1,2 м, немає перешкод у вигляді меблів, декору чи рослин.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_4_5",
+              "text": "Стенди з інформацією про роботу центру розташовані на рівні очей людини середнього зросту — 1,1-1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "parentWithChild",
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_4_6",
+              "text": "Стенди з інформацією мають шрифт без засічок, присутні зрозумілі піктограми та витримана проста мова.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_4_7",
+              "text": "Наявні мнемосхема приміщення з дублюванням інформації шрифтом Брайля на висоті 0,8 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_4_8",
+              "text": "Біля входу, але не на проході, всередині центру є простір розміром 1×1 м, призначений для паркування  дитячих колясок.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "stroller"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub5",
+          "title": "Підрозділ 3.5. Гардероб",
+          "questions": [
+            {
+              "id": "q3_5_1",
+              "text": "Облаштована зона для верхнього одягу - наявні гачки, що розташовані на різних висотах: 85 см, 1,1 м та 1,8 м. \nАбо є вішак з різною висотою гачків.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_5_2",
+              "text": "Передбачені камери зберігання речей",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_5_3",
+              "text": "Номерки на камерах мають бути контрастними та тактильними.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_5_4",
+              "text": "В зоні гардеробу є освітлення",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub6",
+          "title": "Підрозділ 3.6. Коридор",
+          "questions": [
+            {
+              "id": "q3_6_1",
+              "text": "Коридор не вужчий за 2,15 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_2",
+              "text": "Двері при відкритті не заважають переміщенню та є чітко виділеними — кольором або рамою",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_3",
+              "text": "Кожен кабінет позначений табличкою з назвою та піктограмою, контрастною, простою (з простим дизайном, міжнародно зрозумілі) й розташованою на висоті 1,5 м — з боку ручки",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_4",
+              "text": "Всі проходи мають ширину не менше 0,9 м та місця для розвороту діаметром 2,15 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_5",
+              "text": "Наявні різні місця для сидіння: зі спинками і підлокітниками та без, м’які та тверді, з розслабленою посадкою та звичайною.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_6",
+              "text": "Висота сидіння 40, 45 та 50 см? Ширина сидіння також має бути варіативною від 50 до 65 см.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_7",
+              "text": "Передбачено вільне місце для людей на кріслах колісних, в різних рядах, прохід куди є доступним, поруч із іншими місцями, воно не відокремлено, розміром 1,5*1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_8",
+              "text": "Є декілька столів, що є мобільними, легкими, такими які легко переставляти.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Бажано, щоб стіл був з регульованою висотою.",
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_9",
+              "text": "В кімнаті достатньо світла, не сильно яскравого та не мерехтливого.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Бажано мати можливість регулювати освітлення за температурою та інтенсивністю",
+              "options": [
+                "Так, всюди",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_10",
+              "text": "Чи наявна у вас зона “сцена”?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так, вона в нуль",
+                "Так, вона подіумна",
+                "Ні, немає сцени"
+              ]
+            },
+            {
+              "id": "q3_6_11",
+              "text": "Якщо це подіумна сцена, то до неї наявний вихід як сходинками, так і пандусом.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_6_12",
+              "text": "Якщо це сцена в нуль, то вона виділена килимом або кольором",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub7",
+          "title": "Підрозділ 3.7. Відпочинкова зона",
+          "questions": [
+            {
+              "id": "q3_7_1",
+              "text": "Простір є тихим, без зайвих звуків та візуального шуму, аби підходив для людей з сенсорною гіперчутливістю",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_7_2",
+              "text": "Простір забезпечений можливість тривалого перебування — сидіння зі спинками та підлокітниками, можливість напівлежачої пози.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_7_3",
+              "text": "Біля місць для сидіння розташовані гачки для милиць і тростин на висоті 1,1 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_7_4",
+              "text": "Є можливість затемнити простір у світлий час доби, наприклад блек-аут шторами",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_7_5",
+              "text": "Освітлення  м’яке, розсіяне, не сліпить знизу чи зверху.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Бажано мати регульоване освітлення за інтенсивністю, температурою та кольором.",
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub8",
+          "title": "Підрозділ 3.8. Коворкінг",
+          "questions": [
+            {
+              "id": "q3_8_1",
+              "text": "У приміщенні є одинарні столи для роботи,  розташовані біля розеток.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_2",
+              "text": "Розетки є контрастними відносно стіни та розміщуватись на висоті 0,3–1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_3",
+              "text": "Наявні столи з регульованою висотою та вони мають вільне місце під стільницею для колін людини, що пересувається за допомогою крісла колісного",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_4",
+              "text": "Усі проходи мають ширину не менше 0,9 м та місця для розвороту діаметром 1,5 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_5",
+              "text": "Маркерна дошка, шафи, полички та інші предмети, до яких необхідно мати доступ, розташовані на висоті від 80 см до 1,5 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "heightVariation"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_6",
+              "text": "Якщо у коворкінгу існують правила користування технікою, простором, то наявна інформація про це на видному місці, біля входу із чіткими інструкціями. Постер з інструкціями містити контакт адміністратора та адресу коворкінгу",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_7",
+              "text": "Чи є в молодіжному центрі/ простору Wi-Fi?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_8",
+              "text": "Назва мережі та пароль до WI Fi  розміщені в декількох місцях, біля робочих зон коворкінгу?",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_9",
+              "text": "У залі проведення заходів є смітник відкритого типу?",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_8_10",
+              "text": "Яка кількість робочих місць в коворкінгу, якщо такі є?",
+              "type": "text",
+              "required": true,
+              "categories": []
+            }
+          ]
+        },
+        {
+          "id": "section3_sub9",
+          "title": "Підрозділ 3.9. Кухня",
+          "questions": [
+            {
+              "id": "q3_9_1",
+              "text": "Простір є вільним для переміщення, мінімальна ширина проходів становить не менше 90 см, а місця для розвороту діаметром — не менше 1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_9_2",
+              "text": "Робочі поверхні — плити, мийки, столи, полиці холодильника, шафи та ящики — розташовані на висоті 85–90 см та мають під собою простір для колін людини на кріслі колісному висотою не менше 80 см або вільний простір для бокового підходу",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "heightVariation"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_9_3",
+              "text": "Крани, дозатори для мила та паперових рушників є  важільного типу, якими легко оперувати кулаком, вони розташовані на висоті від 90 до 110 см",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "heightVariation",
+                "wheelchair",
+                "weakHand"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Бажано уникати використання сушарки для рук механічного типу, яка є дуже шумною та не гігієнічною. На кухні краще використовувати паперові або текстильні рушники/серветки",
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_9_4",
+              "text": "Фасадні ручки контрастні відносно фасаду меблів, скобового типу, ящики та дверцята на дотягувачах.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_9_5",
+              "text": "Сміттєві баки (баки для сортування) марковані: кольором, текстом українською, текстом англійською (опціонально) та простою ілюстрацією.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Поруч повинна бути розміщена інструкція щодо користуванням сортувальноюї станцією, щоб уникнути некоректного користування та забруднення.",
+              "options": [
+                "Не маємо сортувальної станції",
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_9_6",
+              "text": "Біля побутової техніки наявні інструкції щодо користування, написані простою мовою (доступним для максимально широкого кола людей з першого прочитання.), продубльовані шрифтом Брайля",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_9_7",
+              "text": "Кнопки на техніці мають бути продубльовані шрифтом Брайля",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "visualImpairment"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub10",
+          "title": "Підрозділ 3.10. Зона прийому їжі",
+          "questions": [
+            {
+              "id": "q3_10_1",
+              "text": "Простір вільний для переміщення, мінімальна ширина проходів має становити не менше 90 см, а місця для розвороту — діаметром не менше 1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "heightVariation",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_10_2",
+              "text": "Столи для прийому їжі з регульованою висотою. Наявні столи як на 1–2 людини, так і великі спільні столи",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "heightVariation",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_10_3",
+              "text": "Стільці є зі спинкою та підлокітниками, з висотою сидіння 45–50 см.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "heightVariation",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_10_4",
+              "text": "Біля місць для сидіння є гачок для милиць і тростин на висоті 1,1 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_10_5",
+              "text": "У зоні для миття рук є умивальник з поручнями, а навколо нього — вільний простір 1,5*1,5 м для маневрування людини на кріслі колісному.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "heightVariation",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_10_6",
+              "text": "Дозатор для мила, змішувач, паперовий диспенсер важільного типу та розташовуються на висоті від 90 см до 1,1 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "heightVariation",
+                "weakHand"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_10_7",
+              "text": "Наявне столове приладдя з широкими ручками. Хоча би декілька чашок мають великі ручки, а декілька тарілок — високі бортики.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "weakHand"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub11",
+          "title": "Підрозділ 3.11. Санвузол",
+          "questions": [
+            {
+              "id": "q3_11_1",
+              "text": "Двері відчиняються на 180° із можливістю фіксувати їх у відкритому стані та мати дверний дотягувач, що забезпечує плавне й тихе зачинення.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_2",
+              "text": "Вбиральня маркована відповідною інформаційною табличкою, що є контрастною, розміщена біля дверей (не на дверях!)",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Доступні вбиральні слід маркувати відповідною інформаційною табличкою.",
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_3",
+              "text": "Двері мають бути контрастними до стіни.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_4",
+              "text": "Дверна ручка — натискного типу або у вигляді скоби на висоті 0,85–1,1 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "wheelchair",
+                "weakHand"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_5",
+              "text": "Наявна гендерно-нейтральна вбиральня.",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_6",
+              "text": "Поруч із туалетними кімнатами наявне дзеркало в повний зріст на висоті 10–180 см",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "heightVariation",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_7",
+              "text": "Умивальник розташований на висоті 75–80 см та має вільний простір під собою висотою не менше 70 см",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "heightVariation",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_8",
+              "text": "Біля умивальника передбачений гачок та поличку/простір, для розміщення особистих речей.",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_9",
+              "text": "Гачок повинен розміщуватися на висоті 1,05 см, а поличка повинна бути мінімально 0,3*0,4 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "heightVariation",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_10",
+              "text": "Поручні у зоні умивальника розташовані з трьох сторін, з кріпленням стіна-стіна",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_11",
+              "text": "Крани змішувачів, санітайзери, дозатори для мила та серветок - важільного або сенсорного типу керування",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_12",
+              "text": "Дозатори мила чи диспенсер для паперових рушників розташовані на висоті 0,9–1,1 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "heightVariation",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_13",
+              "text": "Дзеркало вмонтовано під нахилом чи з можливістю повороту",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "heightVariation",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_14",
+              "text": "Сидіння унітазу на висоті 0,4–0,48 м",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "crutches",
+                "heightVariation",
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_15",
+              "text": "З одного боку унітазу  є вільний простір розміром 0,9*1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_16",
+              "text": "Зі сторони, де людина може пересісти з крісла колісного на унітаз, є відкидний поручень на висоті 0,8 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Відкидний поручень повинен розташовуватися на відстані від центру унітазу 0,3–0,35 м. Зі сторони, прилеглої до стіни, має бути настінний г-подібний поручень довжиною 1 м",
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_17",
+              "text": "Наявна кнопка виклику допомоги, що знаходиться біля унітазу на висоті 40 см від підлоги",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_18",
+              "text": "Гачки для особистих речей мають знаходитяться на стіні на висоті 1,05 м, а також біля унітазу на висоті 1,4 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_19",
+              "text": "Є гачок для милиць і тростин біля унітазу, на висоті 1,1 м",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_20",
+              "text": "В кімнаті є дитяча накладка на унітаз та дитячі сходинки.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "parentWithChild"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_11_21",
+              "text": "У кімнаті розташований столик для сповивання дитини (з вільним простором під ним), на висоті 0,75–0,8 м. Столик має мати стропи для фіксування дитини",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "parentWithChild",
+                "stroller",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sub12",
+          "title": "Підрозділ 3.12. Укриття",
+          "questions": [
+            {
+              "id": "q3_12_1",
+              "text": "До укриття ведуть нормативні сходи з шириною сходинки 30 см, а висотою 15 см, всі сходинки в марші однакові.",
+              "type": "text",
+              "required": true,
+              "categories": [
+                "crutches",
+                "heightVariation",
+                "parentWithChild",
+                "legProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_12_2",
+              "text": "Спуск до укриття дублюється нормативним пандусом шириною 1,2 м, з ухилом не більше ніж 4,5°, плоскими горизонтальними майданчиками 1,5*1,5 м кожні 0,8 м підйому, або підйомником.",
+              "type": "text",
+              "required": true,
+              "categories": [
+                "wheelchair",
+                "legProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "recommendationTrigger": []
+            },
+            {
+              "id": "q3_12_3",
+              "text": "Поручні що на сходах, що на пандусі мають бути з обох боків на висотах 0,7 та 0,9 м. Завершальні частини поручнів повинні з обох боків — вгорі та внизу — мати горизонтальне продовження на 0,3 м. Діаметр поручня має становити 40–45 мм. Від крайньої грані поручня до стіни варто залишити простір не менше ніж 50 мм.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "heightVariation",
+                "parentWithChild",
+                "legProsthesis"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_12_4",
+              "text": "Простір немає сенсорних подразників: не є темним, без яскравих миготливих ламп, без тригерних візуальних образів: іржа, метал, бетон тощо",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "explanation": "Рекомендовано влаштувати можливість усамітнитись, бути в тихій частині — особливо для людей з тривожністю або сенсорною чутливістю.",
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_12_5",
+              "text": "Наявні місця для сидіння: зі спинкою та підлокітниками, з висотою сидіння 45–50 см та вільний простір біля них для людей на кріслі колісному розміром 1 на 1,5 м.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_12_6",
+              "text": "Необхідно мати цивільну аптечку та вогнегасник.",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "allPeople"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Частково",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Частково",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_12_7",
+              "text": "Чи знаходяться цивільна аптечка та вогнегасник у доступних та маркованих місцях?",
+              "type": "radio",
+              "required": true,
+              "categories": [],
+              "options": [
+                "Так",
+                "Ні"
+              ]
+            },
+            {
+              "id": "q3_12_8",
+              "text": "Має бути наявна універсальна вбиральня",
+              "type": "radio",
+              "required": true,
+              "categories": [
+                "crutches",
+                "heightVariation",
+                "wheelchair"
+              ],
+              "isAccessibilityQuestion": true,
+              "options": [
+                "Так",
+                "Ні"
+              ],
+              "recommendationTrigger": [
+                "Ні"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

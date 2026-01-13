@@ -1,0 +1,253 @@
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-header {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-color);
+  background-color: white;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.undp-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.landing-main {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  min-width: 250px;
+}
+
+.sections-overview {
+  margin-top: var(--spacing-xl);
+}
+
+.sections-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.section-number {
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+}
+
+.section-card p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Useful materials section */
+.useful-materials {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 2px solid var(--border-color);
+}
+
+.materials-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+.materials-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.material-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.material-link:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.material-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.material-content {
+  flex: 1;
+}
+
+.material-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  transition: color 0.3s ease;
+}
+
+.material-link:hover .material-content h3 {
+  color: var(--primary-color);
+}
+
+.material-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.material-arrow {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.material-link:hover .material-arrow {
+  transform: translateX(4px);
+}
+
+.landing-footer {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--bg-light);
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.landing-footer p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .sections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .undp-logo {
+    height: 40px;
+  }
+
+  .materials-title {
+    font-size: 1.5rem;
+  }
+
+  .material-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .material-icon {
+    font-size: 1.5rem;
+  }
+
+  .material-content h3 {
+    font-size: 1rem;
+  }
+
+  .material-content p {
+    font-size: 0.875rem;
+  }
+
+  .material-arrow {
+    align-self: flex-end;
+  }
+}
