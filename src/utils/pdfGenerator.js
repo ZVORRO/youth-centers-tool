@@ -213,9 +213,9 @@ export async function generateResultsPDFAsBase64(answers) {
 
   const opt = {
     margin: [12, 12, 12, 12],
-    image: { type: 'jpeg', quality: 0.95 },
+    image: { type: 'jpeg', quality: 0.6 },
     html2canvas: {
-      scale: 2,
+      scale: 1.2,
       useCORS: true,
       letterRendering: true,
       allowTaint: false,
@@ -322,9 +322,9 @@ export async function generateAdminPDFAsBase64(answers, questionsData) {
 
   const opt = {
     margin: [12, 12, 12, 12],
-    image: { type: 'jpeg', quality: 0.92 },
+    image: { type: 'jpeg', quality: 0.5 },
     html2canvas: {
-      scale: 1.8,
+      scale: 1.0,
       useCORS: true,
       letterRendering: true,
       allowTaint: false,
