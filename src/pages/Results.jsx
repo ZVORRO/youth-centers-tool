@@ -20,14 +20,19 @@ function Results() {
     setEmailStatus(null)
 
     try {
+      console.log('Starting email send process...')
+
       // Generate both PDFs as base64
+      console.log('Generating PDFs...')
       const resultsPdfBase64 = await generateResultsPDFAsBase64(answers)
       const adminPdfBase64 = await generateAdminPDFAsBase64(answers, questionsData)
+      console.log('PDFs generated successfully')
 
       const centerName = answers?.['q1_1'] || answers?.['q1_1_1'] || 'Молодіжний центр'
       const completedAt = new Date().toLocaleString('uk-UA')
 
       // Send to API endpoint
+      console.log('Sending request to /api/send-results...')
       const response = await fetch('/api/send-results', {
         method: 'POST',
         headers: {
@@ -41,16 +46,33 @@ function Results() {
         }),
       })
 
-      const data = await response.json()
+      console.log('Response status:', response.status)
+
+      let data
+      try {
+        data = await response.json()
+      } catch (jsonError) {
+        console.error('Failed to parse response as JSON:', jsonError)
+        const text = await response.text()
+        console.error('Response text:', text)
+        throw new Error('Invalid response from server')
+      }
+
+      console.log('Response data:', data)
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to send email')
+        console.error('Server error:', data)
+        throw new Error(data.error || data.details || 'Failed to send email')
       }
 
       setEmailStatus('success')
       console.log('Email sent successfully:', data)
     } catch (error) {
       console.error('Error sending email:', error)
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack
+      })
       setEmailStatus('error')
     } finally {
       setIsSendingEmail(false)

@@ -17,7 +17,8 @@
       "Bash(for file in icons/*.png)",
       "Bash(do cp \"$file\" \"public/icons/\")",
       "Bash(done)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(dir:*)"
     ]
   }
 }
