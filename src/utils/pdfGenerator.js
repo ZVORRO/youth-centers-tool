@@ -212,10 +212,10 @@ export async function generateResultsPDFAsBase64(answers) {
   const element = document.getElementById('results-content')
 
   const opt = {
-    margin: [10, 10, 10, 10],
-    image: { type: 'jpeg', quality: 0.3 },
+    margin: [12, 12, 12, 12],
+    image: { type: 'jpeg', quality: 0.95 },
     html2canvas: {
-      scale: 0.8,
+      scale: 2,
       useCORS: true,
       letterRendering: true,
       allowTaint: false,
@@ -321,10 +321,10 @@ export async function generateAdminPDFAsBase64(answers, questionsData) {
   document.body.appendChild(container)
 
   const opt = {
-    margin: [10, 10, 10, 10],
-    image: { type: 'jpeg', quality: 0.3 },
+    margin: [12, 12, 12, 12],
+    image: { type: 'jpeg', quality: 0.92 },
     html2canvas: {
-      scale: 0.75,
+      scale: 1.8,
       useCORS: true,
       letterRendering: true,
       allowTaint: false,
