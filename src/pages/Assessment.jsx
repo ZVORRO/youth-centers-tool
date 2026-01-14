@@ -28,13 +28,28 @@ function Assessment() {
   const [showExplanationModal, setShowExplanationModal] = useState(false)
   const [validationError, setValidationError] = useState('')
   const [showSection3Instruction, setShowSection3Instruction] = useState(false)
+  const [modeChecked, setModeChecked] = useState(false)
 
   useEffect(() => {
-    // Check if mode is selected
-    if (!mode) {
-      navigate('/mode-selection')
-      return
-    }
+    // Give time for mode to load from localStorage
+    const checkMode = setTimeout(() => {
+      if (!mode) {
+        // Double-check localStorage directly as fallback
+        const savedMode = localStorage.getItem('assessment_mode')
+        if (!savedMode) {
+          navigate('/mode-selection')
+          return
+        }
+      }
+      setModeChecked(true)
+    }, 100)
+
+    return () => clearTimeout(checkMode)
+  }, [mode, navigate])
+
+  useEffect(() => {
+    // Only proceed if mode is checked
+    if (!modeChecked) return
 
     // Start assessment if section changed
     if (currentSection !== sectionId) {
@@ -48,7 +63,7 @@ function Assessment() {
         setShowSection3Instruction(true)
       }
     }
-  }, [mode, sectionId, currentSection, navigate, startAssessment])
+  }, [modeChecked, sectionId, currentSection, startAssessment])
 
   const question = getCurrentQuestion()
   const subsection = getCurrentSubsection()

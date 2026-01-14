@@ -11,11 +11,11 @@ function ModeSelection() {
       // Save mode to localStorage
       localStorage.setItem('assessment_mode', selectedMode)
 
-      // Small delay to ensure localStorage is written before navigation
-      // This prevents race condition where Assessment checks mode before it's saved
+      // Delay to ensure localStorage is written before navigation
+      // Assessment.jsx also has a delay to check mode, so this ensures reliability
       setTimeout(() => {
         navigate('/assessment/section1')
-      }, 50)
+      }, 150)
     }
   }
 
