@@ -15,7 +15,7 @@ function Landing() {
         <div className="container">
           <div className="logos">
             <img
-              src="/UNDP_Logo.png"
+              src="/UNDP-Logo-Blue-Large.png"
               alt="UNDP Logo"
               className="undp-logo"
             />
