@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import { AssessmentProvider } from './context/AssessmentContext'
 import { AccessibilityProvider } from './context/AccessibilityContext'
 import AccessibilityMenu from './components/AccessibilityMenu'
@@ -76,6 +77,7 @@ function AppContent() {
       </Routes>
 
       <AccessibilityMenu />
+      <Analytics />
     </>
   )
 }
