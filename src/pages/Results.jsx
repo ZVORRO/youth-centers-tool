@@ -30,57 +30,13 @@ function Results() {
       const resultsPdfBase64 = await generateResultsPDFAsBase64(answers)
       console.log('Results PDF generated')
 
-      // Step 2: Upload Results PDF to Blob
-      console.log('Uploading Results PDF to Blob storage...')
-      const uploadResponse1 = await fetch('/api/upload-pdf', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          pdfBase64: resultsPdfBase64,
-          filename: 'звіт_з_рекомендаціями.pdf',
-          centerName
-        }),
-      })
-
-      const uploadData1 = await uploadResponse1.json()
-      if (!uploadResponse1.ok) {
-        throw new Error(uploadData1.error || 'Failed to upload Results PDF')
-      }
-
-      const resultsPdfUrl = uploadData1.url
-      console.log('Results PDF uploaded:', resultsPdfUrl)
-
-      // Step 3: Generate Admin PDF
+      // Step 2: Generate Admin PDF
       console.log('Generating Admin PDF...')
       const adminPdfBase64 = await generateAdminPDFAsBase64(answers, questionsData)
       console.log('Admin PDF generated')
 
-      // Step 4: Upload Admin PDF to Blob
-      console.log('Uploading Admin PDF to Blob storage...')
-      const uploadResponse2 = await fetch('/api/upload-pdf', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          pdfBase64: adminPdfBase64,
-          filename: 'повні_відповіді.pdf',
-          centerName
-        }),
-      })
-
-      const uploadData2 = await uploadResponse2.json()
-      if (!uploadResponse2.ok) {
-        throw new Error(uploadData2.error || 'Failed to upload Admin PDF')
-      }
-
-      const adminPdfUrl = uploadData2.url
-      console.log('Admin PDF uploaded:', adminPdfUrl)
-
-      // Step 5: Send emails with download links
-      console.log('Sending emails with download links...')
+      // Step 3: Send email with PDF attachments (no Blob storage needed)
+      console.log('Sending email with PDF attachments...')
       const emailResponse = await fetch('/api/send-results', {
         method: 'POST',
         headers: {
@@ -88,18 +44,18 @@ function Results() {
         },
         body: JSON.stringify({
           centerName,
-          resultsPdfUrl,
-          adminPdfUrl,
+          resultsPdfBase64,
+          adminPdfBase64,
           completedAt
         }),
       })
 
       const emailData = await emailResponse.json()
       if (!emailResponse.ok) {
-        throw new Error(emailData.error || 'Failed to send emails')
+        throw new Error(emailData.error || 'Failed to send email')
       }
 
-      console.log('Emails sent successfully:', emailData)
+      console.log('Email sent successfully:', emailData)
 
       setEmailStatus('success')
       console.log('Process completed successfully!')
