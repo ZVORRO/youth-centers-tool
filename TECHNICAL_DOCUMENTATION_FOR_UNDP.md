@@ -28,8 +28,8 @@ The **Youth Centers Accessibility Assessment Tool** is a web-based questionnaire
 - People with visual impairments
 - People with hearing impairments
 - Parents with strollers
-- Elderly visitors
-- And 12 other user categories
+- People with limited mobility
+- And 12 other user categories (17 total)
 
 After completing approximately 100 questions across 4 sections, the tool:
 - Calculates accessibility scores for each user category
