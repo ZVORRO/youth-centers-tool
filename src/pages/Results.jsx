@@ -13,7 +13,8 @@ function Results() {
   const [recommendations, setRecommendations] = useState([])
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
   const [isSendingEmail, setIsSendingEmail] = useState(false)
-  const [emailStatus, setEmailStatus] = useState(null) // 'success' | 'error' | null
+  const [emailStatus, setEmailStatus] = useState(null) // 'success' | 'error' | 'auto-success' | null
+  const [autoEmailAttempted, setAutoEmailAttempted] = useState(false)
 
   const handleSendEmail = useCallback(async () => {
     setIsSendingEmail(true)
@@ -71,6 +72,7 @@ function Results() {
     }
   }, [answers, questionsData])
 
+  // First useEffect: Calculate scores and recommendations
   useEffect(() => {
     // Check if assessment is complete
     if (Object.keys(answers).length === 0) {
@@ -89,17 +91,73 @@ function Results() {
       questionsData
     )
     setRecommendations(recs)
+  }, [answers, questionsData, navigate])
 
-    // Automatically send email with results (only once)
-    const emailSent = sessionStorage.getItem('emailSent')
-    if (!emailSent) {
-      // Small delay to ensure page is fully loaded
-      setTimeout(() => {
-        handleSendEmail()
-        sessionStorage.setItem('emailSent', 'true')
-      }, 1000)
+  // Second useEffect: Auto-send email AFTER scores are calculated and component is rendered
+  useEffect(() => {
+    // Only proceed if scores exist and we haven't attempted auto-email yet
+    if (!scores || autoEmailAttempted) {
+      return
     }
-  }, [answers, questionsData, navigate, handleSendEmail])
+
+    const emailSent = sessionStorage.getItem('emailSent')
+    if (emailSent) {
+      return
+    }
+
+    // Mark as attempted to prevent multiple calls
+    setAutoEmailAttempted(true)
+
+    // Wait for DOM to be fully rendered
+    const timer = setTimeout(async () => {
+      // Check if the results-content element exists
+      const element = document.getElementById('results-content')
+      if (!element) {
+        console.error('results-content element not found')
+        return
+      }
+
+      try {
+        setIsSendingEmail(true)
+        console.log('Auto-sending email...')
+
+        const centerName = answers?.['q1_1'] || answers?.['q1_1_1'] || 'Молодіжний центр'
+        const completedAt = new Date().toLocaleString('uk-UA')
+
+        // Generate PDFs
+        const resultsPdfBase64 = await generateResultsPDFAsBase64(answers)
+        const adminPdfBase64 = await generateAdminPDFAsBase64(answers, questionsData)
+
+        // Send email
+        const emailResponse = await fetch('/api/send-results', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            centerName,
+            resultsPdfBase64,
+            adminPdfBase64,
+            completedAt
+          }),
+        })
+
+        const emailData = await emailResponse.json()
+        if (!emailResponse.ok) {
+          throw new Error(emailData.error || 'Failed to send email')
+        }
+
+        console.log('Auto email sent successfully:', emailData)
+        sessionStorage.setItem('emailSent', 'true')
+        setEmailStatus('auto-success')
+      } catch (error) {
+        console.error('Auto email error:', error)
+        // Don't show error for auto-send, user can manually retry
+      } finally {
+        setIsSendingEmail(false)
+      }
+    }, 1500) // Wait 1.5 seconds for DOM to be ready
+
+    return () => clearTimeout(timer)
+  }, [scores, autoEmailAttempted, answers, questionsData])
 
   const handleDownloadPDF = async () => {
     setIsGeneratingPDF(true)
@@ -338,8 +396,12 @@ function Results() {
 
         {/* Email status message */}
         {emailStatus && (
-          <div className={`email-status ${emailStatus === 'success' ? 'email-success' : 'email-error'}`}>
-            {emailStatus === 'success' ? (
+          <div className={`email-status ${emailStatus === 'success' || emailStatus === 'auto-success' ? 'email-success' : 'email-error'}`}>
+            {emailStatus === 'auto-success' ? (
+              <>
+                ✅ Результати автоматично відправлено адміністратору на email!
+              </>
+            ) : emailStatus === 'success' ? (
               <>
                 ✅ Результати успішно відправлено на email адміністратора!
               </>
