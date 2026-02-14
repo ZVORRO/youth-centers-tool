@@ -95,23 +95,29 @@ function Results() {
 
   // Second useEffect: Auto-send email AFTER scores are calculated and component is rendered
   useEffect(() => {
+    console.log('Auto-email useEffect triggered', { scores: !!scores, autoEmailAttempted })
+
     // Only proceed if scores exist and we haven't attempted auto-email yet
     if (!scores || autoEmailAttempted) {
+      console.log('Skipping auto-email:', !scores ? 'no scores' : 'already attempted')
       return
     }
 
     const emailSent = sessionStorage.getItem('emailSent')
     if (emailSent) {
+      console.log('Skipping auto-email: already sent in this session')
       return
     }
 
     // Mark as attempted to prevent multiple calls
     setAutoEmailAttempted(true)
+    console.log('Starting auto-email process...')
 
     // Wait for DOM to be fully rendered
     const timer = setTimeout(async () => {
       // Check if the results-content element exists
       const element = document.getElementById('results-content')
+      console.log('DOM element check:', { found: !!element })
       if (!element) {
         console.error('results-content element not found')
         return
