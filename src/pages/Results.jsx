@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAssessment } from '../context/AssessmentContext'
 import { calculateScores, getCategoryName, getScoreColor, getScoreLabel } from '../utils/scoring'
@@ -14,7 +14,7 @@ function Results() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
   const [isSendingEmail, setIsSendingEmail] = useState(false)
   const [emailStatus, setEmailStatus] = useState(null) // 'success' | 'error' | 'auto-success' | null
-  const [autoEmailAttempted, setAutoEmailAttempted] = useState(false)
+  const autoEmailAttemptedRef = useRef(false)
 
   const handleSendEmail = useCallback(async () => {
     setIsSendingEmail(true)
@@ -95,29 +95,30 @@ function Results() {
 
   // Second useEffect: Auto-send email AFTER scores are calculated and component is rendered
   useEffect(() => {
-    console.log('Auto-email useEffect triggered', { scores: !!scores, autoEmailAttempted })
-
     // Only proceed if scores exist and we haven't attempted auto-email yet
-    if (!scores || autoEmailAttempted) {
-      console.log('Skipping auto-email:', !scores ? 'no scores' : 'already attempted')
+    if (!scores) {
+      return
+    }
+
+    // Use ref to prevent multiple attempts (doesn't trigger re-render)
+    if (autoEmailAttemptedRef.current) {
       return
     }
 
     const emailSent = sessionStorage.getItem('emailSent')
     if (emailSent) {
-      console.log('Skipping auto-email: already sent in this session')
       return
     }
 
-    // Mark as attempted to prevent multiple calls
-    setAutoEmailAttempted(true)
-    console.log('Starting auto-email process...')
+    // Mark as attempted IMMEDIATELY using ref (sync, no re-render)
+    autoEmailAttemptedRef.current = true
 
-    // Wait for DOM to be fully rendered
-    const timer = setTimeout(async () => {
-      // Check if the results-content element exists
+    // Auto-send email function
+    const sendAutoEmail = async () => {
+      // Wait a bit for DOM to be fully rendered
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
       const element = document.getElementById('results-content')
-      console.log('DOM element check:', { found: !!element })
       if (!element) {
         console.error('results-content element not found')
         return
@@ -125,7 +126,6 @@ function Results() {
 
       try {
         setIsSendingEmail(true)
-        console.log('Auto-sending email...')
 
         const centerName = answers?.['q1_1'] || answers?.['q1_1_1'] || 'Молодіжний центр'
         const completedAt = new Date().toLocaleString('uk-UA')
@@ -151,7 +151,6 @@ function Results() {
           throw new Error(emailData.error || 'Failed to send email')
         }
 
-        console.log('Auto email sent successfully:', emailData)
         sessionStorage.setItem('emailSent', 'true')
         setEmailStatus('auto-success')
       } catch (error) {
@@ -160,10 +159,10 @@ function Results() {
       } finally {
         setIsSendingEmail(false)
       }
-    }, 1500) // Wait 1.5 seconds for DOM to be ready
+    }
 
-    return () => clearTimeout(timer)
-  }, [scores, autoEmailAttempted, answers, questionsData])
+    sendAutoEmail()
+  }, [scores, answers, questionsData])
 
   const handleDownloadPDF = async () => {
     setIsGeneratingPDF(true)
