@@ -211,12 +211,12 @@ export async function generateResultsPDF(answers) {
 export async function generateResultsPDFAsBase64(answers) {
   const element = document.getElementById('results-content')
 
-  // Optimized settings for email (smaller file size)
+  // Balanced settings for email (good quality, reasonable size ~500KB-1MB)
   const opt = {
     margin: [10, 10, 10, 10],
-    image: { type: 'jpeg', quality: 0.6 },
+    image: { type: 'jpeg', quality: 0.8 },
     html2canvas: {
-      scale: 1.0,
+      scale: 1.5,
       useCORS: true,
       letterRendering: true,
       allowTaint: false,
@@ -321,12 +321,12 @@ export async function generateAdminPDFAsBase64(answers, questionsData) {
   container.innerHTML = content
   document.body.appendChild(container)
 
-  // Optimized settings for email (smaller file size)
+  // Balanced settings for email (good quality, reasonable size ~1-1.5MB)
   const opt = {
     margin: [10, 10, 10, 10],
-    image: { type: 'jpeg', quality: 0.6 },
+    image: { type: 'jpeg', quality: 0.8 },
     html2canvas: {
-      scale: 1.0,
+      scale: 1.5,
       useCORS: true,
       letterRendering: true,
       allowTaint: false,
