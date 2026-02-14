@@ -34,7 +34,8 @@ The **Youth Centers Accessibility Assessment Tool** is a web-based questionnaire
 After completing approximately 100 questions across 4 sections, the tool:
 - Calculates accessibility scores for each user category
 - Provides specific recommendations for improvement
-- Generates a PDF report that can be downloaded and shared
+- Generates PDF reports that can be downloaded
+- **Automatically sends results to the UNDP administrator via email**
 
 ---
 
@@ -123,39 +124,51 @@ The tool uses different types of questions depending on what information is need
 USER'S BROWSER                    VERCEL SERVERS              EMAIL SERVICE
      |                                  |                          |
      |  1. User completes assessment    |                          |
-     |  2. Click "Submit"               |                          |
+     |                                  |                          |
+     |  2. Results page loads           |                          |
+     |     - Scores calculated          |                          |
+     |     - Recommendations generated  |                          |
+     |                                  |                          |
+     |  3. AUTO: Generate PDF reports   |                          |
+     |     (in user's browser)          |                          |
+     |                                  |                          |
+     |  4. AUTO: Send to server         |                          |
      |--------------------------------->|                          |
-     |  3. Generate PDF reports         |                          |
-     |    (in user's browser)           |                          |
      |                                  |                          |
-     |  4. Upload PDFs to storage       |                          |
-     |--------------------------------->|                          |
-     |                                  |  5. Store PDF files      |
-     |                                  |     (Vercel Blob)        |
+     |                                  |  5. Send email with      |
+     |                                  |     PDF attachments      |
+     |                                  |------------------------->|
      |                                  |                          |
-     |  6. Send email notification      |                          |
-     |--------------------------------->|------------------------->|
+     |                                  |                          |  6. Email delivered
+     |                                  |                          |     to admin inbox
      |                                  |                          |
-     |                                  |  7. Email with download  |
-     |                                  |     links sent to admin  |
-     |                                  |                          |
-     |  8. Show success message         |                          |
+     |  7. Show success message         |                          |
      |<---------------------------------|                          |
+     |                                  |                          |
+     |  8. User can also download       |                          |
+     |     PDFs manually                |                          |
 ```
 
 ### Step-by-Step Explanation
 
 1. **User completes the assessment** — All answers are saved in the browser's memory (called "localStorage"). This means if you close the browser accidentally, your progress is saved.
 
-2. **PDF Generation** — When the user finishes, the website creates two PDF documents:
-   - **Results Report** — Scores and recommendations (for the youth center)
-   - **Full Answers Report** — Complete responses (for UNDP administration)
+2. **Results page loads** — The website calculates scores and generates recommendations based on the answers.
 
-3. **PDF Upload** — The PDF files are uploaded to Vercel's cloud storage (like uploading to Google Drive or Dropbox).
+3. **Automatic PDF Generation** — The website creates two PDF documents in the user's browser:
+   - **Results Report** (~500KB-1MB) — Scores and recommendations (for the youth center)
+   - **Full Answers Report** (~1-1.5MB) — Complete responses (for UNDP administration)
 
-4. **Email Notification** — An automatic email is sent to the UNDP administrator with links to download both PDF files.
+4. **Automatic Email Sending** — Within seconds of loading the results page, the system automatically:
+   - Sends PDF reports to the Vercel server
+   - Server forwards them to the email service (Resend)
+   - Email with PDF attachments is delivered to the administrator
 
-5. **User Download** — The user can also download their results report directly.
+5. **Success Confirmation** — User sees a green message: "Результати автоматично відправлено адміністратору на email!"
+
+6. **Manual Options** — User can also:
+   - Download PDFs directly to their computer
+   - Manually resend email if needed
 
 ### Data Storage
 
@@ -194,6 +207,11 @@ USER'S BROWSER                    VERCEL SERVERS              EMAIL SERVICE
 - Automatic updates when we change the code
 - Fast loading speeds worldwide
 - No server management needed
+
+**What Vercel does for us:**
+- Hosts the website (makes it accessible at the URL)
+- Runs "serverless functions" (small programs that send emails)
+- Automatically deploys updates when code changes
 
 ### 2. Resend (Email Service)
 
@@ -266,7 +284,7 @@ Vercel has servers in multiple locations worldwide (called "edge network"). When
 | Feature | Limit | Our Usage |
 |---------|-------|-----------|
 | **Bandwidth (Fast Data Transfer)** | 100 GB/month | Low (text-based website) |
-| **Serverless Functions** | 1,000,000 invocations/month | ~2-3 calls per assessment |
+| **Serverless Functions** | 1,000,000 invocations/month | ~1 call per assessment |
 | **Build Minutes** | 6,000/month | ~1-2 min per update |
 | **Edge Requests** | 1,000,000/month | Low usage |
 | **Team Members** | 1 person only | Single developer |
@@ -292,7 +310,7 @@ If we need to upgrade (for team collaboration or higher limits). Note: each team
 | **Pro** | $20/month | 50,000 | Higher |
 | **Scale** | $90/month | 100,000 | Higher |
 
-**Our usage:** Well within the free tier (expecting ~50-100 assessments/month = ~2-3 emails/day average)
+**Our usage:** Well within the free tier (expecting ~50-100 assessments/month = ~1-2 emails/day average)
 
 ### Total Monthly Cost Estimate
 
@@ -314,6 +332,13 @@ If we need to upgrade (for team collaboration or higher limits). Note: each team
 3. **No Git Organization** — Cannot connect to organizational GitHub accounts
 4. **No Team Features** — No collaboration, shared access, or team analytics
 5. **Usage Limits** — If exceeded, service pauses until next 30-day cycle (no charges, just wait)
+
+#### Request Size Limit
+
+Vercel has a **4.5 MB limit** for data sent to serverless functions. Our PDFs are optimized to stay within this limit:
+- Results PDF: ~500KB-1MB
+- Full Answers PDF: ~1-1.5MB
+- Total: ~1.5-2.5MB (well under 4.5MB limit)
 
 #### When to Upgrade
 
@@ -362,8 +387,20 @@ Questions are stored in a file called `questions.json`. To add, modify, or remov
 
 - All connections use HTTPS (encrypted)
 - No passwords stored in the code
-- Sensitive credentials stored in Vercel's secure environment
+- Sensitive credentials stored in Vercel's secure environment variables
 - Regular security updates from Vercel
+- Email API key stored securely (not visible in code)
+
+### Environment Variables
+
+The following secret values are stored securely in Vercel (not in the code):
+
+| Variable | Purpose |
+|----------|---------|
+| `RESEND_API_KEY` | Authentication for email service |
+| `ADMIN_EMAIL` | Email address to receive assessment results |
+
+These can be updated in the Vercel dashboard under Project Settings → Environment Variables.
 
 ---
 
@@ -378,10 +415,12 @@ Questions are stored in a file called `questions.json`. To add, modify, or remov
 | **Git/GitHub** | A system for tracking code changes and collaboration |
 | **Hosting** | Providing server space for a website to run |
 | **JSON** | JavaScript Object Notation — a format for storing data |
+| **localStorage** | Browser storage that persists data locally |
 | **PDF** | Portable Document Format — a document format for printing and sharing |
 | **React** | A popular tool for building websites |
 | **Server** | A computer that runs 24/7 to serve websites |
 | **Serverless** | Code that runs without managing servers (Vercel handles it) |
+| **sessionStorage** | Browser storage that clears when the tab closes |
 
 ---
 
@@ -391,6 +430,7 @@ Questions are stored in a file called `questions.json`. To add, modify, or remov
 
 - **Vercel Dashboard:** https://vercel.com/dashboard
 - **Resend Dashboard:** https://resend.com/overview
+- **GitHub Repository:** https://github.com/ZVORRO/youth-centers-tool
 
 ### Pricing Pages
 
@@ -406,7 +446,28 @@ Questions are stored in a file called `questions.json`. To add, modify, or remov
 
 ---
 
-## Appendix C: Contact and Support
+## Appendix C: Troubleshooting
+
+### Common Issues and Solutions
+
+| Issue | Possible Cause | Solution |
+|-------|---------------|----------|
+| Email not received | Email in spam folder | Check spam/junk folder |
+| Email not received | Resend daily limit reached | Wait until next day (resets at midnight UTC) |
+| PDF download fails | Browser blocking pop-ups | Allow pop-ups for this site |
+| Assessment not saving | localStorage full/disabled | Clear browser data or use different browser |
+| Website not loading | Vercel outage (rare) | Check status.vercel.com |
+
+### Checking Email Delivery
+
+1. Log in to Resend dashboard (https://resend.com)
+2. Go to "Emails" section
+3. See all sent emails with delivery status
+4. Green = delivered, Yellow = pending, Red = failed
+
+---
+
+## Appendix D: Contact and Support
 
 For technical issues or questions about this tool:
 
