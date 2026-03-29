@@ -178,6 +178,9 @@ function getScoreLevel(percentage) {
  * Get score description
  */
 function getScoreDescription(percentage) {
+  if (percentage === 100) {
+    return 'Вітаємо! Ваш молодіжний центр демонструє відмінний рівень доступності для всіх користувачів.'
+  }
   if (percentage >= 80) {
     return 'Ваш молодіжний центр демонструє сильну відданість доступності, але деякі зони можуть бути покращені.'
   }

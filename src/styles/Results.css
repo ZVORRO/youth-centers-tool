@@ -62,6 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   margin: var(--spacing-lg) auto;
   position: relative;
 }
@@ -73,12 +74,11 @@
 }
 
 .score-percentage {
-  position: absolute;
-  bottom: 60px;
-  right: 60px;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-secondary);
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
 }
 
 .score-level-badge {
