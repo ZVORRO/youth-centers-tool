@@ -59,6 +59,35 @@ export function AssessmentProvider({ children }) {
     return answers[questionId]
   }
 
+  // Helper function to check if question should be shown based on conditionalOn
+  const shouldShowQuestion = (question) => {
+    if (!question.conditionalOn) {
+      return true // No condition, always show
+    }
+
+    const { questionId, value, notValue } = question.conditionalOn
+    const conditionAnswer = answers[questionId]
+
+    // Check positive condition (value)
+    if (value !== undefined) {
+      return conditionAnswer === value
+    }
+
+    // Check negative condition (notValue)
+    if (notValue !== undefined) {
+      return conditionAnswer !== notValue
+    }
+
+    return true
+  }
+
+  // Get filtered questions (only those that should be shown)
+  const getFilteredQuestions = (section) => {
+    if (!section) return []
+    const allQuestions = section.subsections.flatMap(sub => sub.questions)
+    return allQuestions.filter(q => shouldShowQuestion(q))
+  }
+
   const startAssessment = (sectionId) => {
     setCurrentSection(sectionId)
     setCurrentQuestionIndex(0)
@@ -69,10 +98,10 @@ export function AssessmentProvider({ children }) {
     const section = questionsData.sections.find(s => s.id === currentSection)
     if (!section) return false
 
-    // Get all questions from all subsections in current section
-    const allQuestions = section.subsections.flatMap(sub => sub.questions)
+    // Get filtered questions (respecting conditionalOn)
+    const filteredQuestions = getFilteredQuestions(section)
 
-    if (currentQuestionIndex < allQuestions.length - 1) {
+    if (currentQuestionIndex < filteredQuestions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1)
       return true
     }
@@ -92,18 +121,22 @@ export function AssessmentProvider({ children }) {
     const section = questionsData.sections.find(s => s.id === currentSection)
     if (!section) return null
 
-    const allQuestions = section.subsections.flatMap(sub => sub.questions)
-    return allQuestions[currentQuestionIndex]
+    const filteredQuestions = getFilteredQuestions(section)
+    return filteredQuestions[currentQuestionIndex]
   }
 
   const getCurrentSubsection = () => {
     const section = questionsData.sections.find(s => s.id === currentSection)
     if (!section) return null
 
-    let questionCount = 0
+    // Get current question from filtered list
+    const filteredQuestions = getFilteredQuestions(section)
+    const currentQuestion = filteredQuestions[currentQuestionIndex]
+    if (!currentQuestion) return null
+
+    // Find which subsection contains this question
     for (const subsection of section.subsections) {
-      questionCount += subsection.questions.length
-      if (currentQuestionIndex < questionCount) {
+      if (subsection.questions.some(q => q.id === currentQuestion.id)) {
         return subsection
       }
     }
@@ -114,8 +147,8 @@ export function AssessmentProvider({ children }) {
     const section = questionsData.sections.find(s => s.id === currentSection)
     if (!section) return { current: 0, total: 0, percentage: 0 }
 
-    const allQuestions = section.subsections.flatMap(sub => sub.questions)
-    const total = allQuestions.length
+    const filteredQuestions = getFilteredQuestions(section)
+    const total = filteredQuestions.length
     const current = currentQuestionIndex + 1
     const percentage = Math.round((current / total) * 100)
 

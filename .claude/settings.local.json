@@ -18,7 +18,10 @@
       "Bash(do cp \"$file\" \"public/icons/\")",
       "Bash(done)",
       "Bash(npm run build:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(cd:*)",
+      "Bash(git checkout:*)",
+      "Bash(python3:*)"
     ]
   }
 }
