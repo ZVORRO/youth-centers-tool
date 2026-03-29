@@ -156,9 +156,11 @@ export function AssessmentProvider({ children }) {
   }
 
   const getOverallProgress = () => {
-    const totalQuestions = questionsData.sections.flatMap(
-      section => section.subsections.flatMap(sub => sub.questions)
-    ).length
+    // Count only questions that should be shown (respecting conditionalOn)
+    const allFilteredQuestions = questionsData.sections.flatMap(
+      section => getFilteredQuestions(section)
+    )
+    const totalQuestions = allFilteredQuestions.length
 
     const answeredQuestions = Object.keys(answers).length
     const percentage = Math.round((answeredQuestions / totalQuestions) * 100)

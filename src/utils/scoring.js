@@ -157,6 +157,11 @@ function isNegativeAnswer(answer, question) {
     return question.recommendationTrigger.includes(answer.main)
   }
 
+  // Handle checkbox with conditionalField (object with options array)
+  if (typeof answer === 'object' && answer.options && Array.isArray(answer.options)) {
+    return answer.options.some(a => question.recommendationTrigger.includes(a))
+  }
+
   if (Array.isArray(answer)) {
     // For checkbox questions, check if any selected option is negative
     return answer.some(a => question.recommendationTrigger.includes(a))
