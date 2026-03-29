@@ -152,6 +152,8 @@ export function AssessmentProvider({ children }) {
     localStorage.removeItem('assessment_answers')
     localStorage.removeItem('assessment_progress')
     localStorage.removeItem('assessment_mode')
+    localStorage.removeItem('section3InstructionSeen')
+    sessionStorage.removeItem('emailSent')
   }
 
   const value = {
